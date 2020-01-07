@@ -3,8 +3,7 @@ import React, { useState, useEffect } from "react";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import Map from "./components/Map";
-import AboutGame from "./components/AboutGame";
-import AboutTeam from "./components/AboutTeam";
+
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -24,7 +23,7 @@ function App() {
   }
   return (
     <div className="App">
-      <AboutGame />
+      
       {isLoggedIn ? (
         <div className="mapBox">
           <Map />
@@ -32,13 +31,13 @@ function App() {
       ) : (
         <div className="logBox">
           {isLoginButton ? <Register /> : <Login />}
-          <button className="toggleLogBtn" onClick={e => toggleForm(e) } style={{marginTop: "-30px"}}>
+          <button className="toggleLogBtn" onClick={e => toggleForm(e) }>
             {isLoginButton ? "Switch to Login" : "Switch to Register"}
           </button>
         </div>
       )}
 
-      <AboutTeam />
+      
     </div>
   );
 }
